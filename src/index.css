@@ -1,0 +1,16 @@
+.not-found,
+.profilesList {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 5px;
+  font-size: 24px;
+  color: #333;
+}
+.profilesContainer {
+  display: flex;
+  gap: 10px;
+  height: 100vh;
+  align-items: baseline;
+}
+

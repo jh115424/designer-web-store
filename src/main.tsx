@@ -1,4 +1,4 @@
-import Home from './Pages/HomeStoreApp'
+
 import Apparel from './Pages/ApparelPage'
 import Shoes from './Pages/ShoesPage'
 import './Pages/HomeStore.css'

@@ -8,21 +8,20 @@ const userUrl = "https://fakestoreapi.com/products";
 export default function HomeStoreApp() {
   const [searchResults, setSearchResults] = useState([]);
 
+  const data = searchResults;
+
+  const data_filter = data.filter(
+    (filter: any) =>
+      filter.category === "men's clothing" ||
+      filter.category === "women's clothing"
+  );
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch(userUrl);
-        const data = await response.json();
+    fetch(userUrl)
+      .then((response) => response.json())
+      .then((data) => {
         setSearchResults(data);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
-
-    fetchProducts();
+      });
   }, []);
-
-  console.log(searchResults); // Added this line to use searchResults
 
   return (
     <>
@@ -33,10 +32,10 @@ export default function HomeStoreApp() {
           </Link>
           <div className="topRightHome-Nav">
             <Link to="/apparel" className="btn btn-primary">
-              Shop Apparel
+              Shop Men's
             </Link>
-            <Link to="/shoes" className="btn btn-primary">
-              Shop Shoes
+            <Link to="/jewelry" className="btn btn-primary">
+              Shop Jewelry
             </Link>
           </div>
         </div>
@@ -63,17 +62,18 @@ export default function HomeStoreApp() {
       </div>
 
       <div className="card-container">
-        {searchResults.map((product: any) => (
+        {data_filter.map((product: any) => (
           <div key={product.id} className="card">
             <img
               src={product.image}
               className="card-image"
               alt={product.title}
             />
-            {/* <div className="card-body">
-                            <h5 className="card-title">{product.title}</h5>
-                            <p className="card-text">{product.description}</p>
-                        </div> */}
+            <div className="card-body">
+              <h5 className="card-title">{product.title}</h5>
+              <p className="card-text">{product.price}</p>
+              <p className="card-text">{product.description}</p>
+            </div>
           </div>
         ))}
       </div>

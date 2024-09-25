@@ -1,7 +1,11 @@
 
-import Apparel from './Pages/ApparelPage'
-import Shoes from './Pages/ShoesPage'
+import Apparel from './Pages/MensApparelPage'
+import Jewelry from './Pages/JewelryPage'
+// import Jewelry from "./Pages/JewelryPage.css"
 import './Pages/HomeStore.css'
+import './Pages/MensApparelPage.css'
+import './Pages/JewelryPage.css'
+
 
 
 
@@ -23,8 +27,8 @@ const router = createBrowserRouter([
     element: <Apparel />,
   },
   {
-    path: "/shoes",
-    element: <Shoes/>,
+    path: "/jewelry",
+    element: <Jewelry/>,
   },
 
 

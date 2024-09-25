@@ -1,42 +1,33 @@
+import Apparel from "./Pages/MensApparelPage";
+import Jewelery from "./Pages/JeweleryPage";
+import "./Pages/HomeStore.css";
+import "./Pages/MensApparelPage.css";
+import "./Pages/JeweleryPage.css";
 
-import Apparel from './Pages/MensApparelPage'
-import Jewelry from './Pages/JewelryPage'
-// import Jewelry from "./Pages/JewelryPage.css"
-import './Pages/HomeStore.css'
-import './Pages/MensApparelPage.css'
-import './Pages/JewelryPage.css'
+import ReactDOM from "react-dom/client";
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-
-
-
-
-import  ReactDOM  from 'react-dom/client'
-import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-import './index.css'
-import HomeStorePage from './Pages/HomeStoreApp'
+import "./index.css";
+import HomeStorePage from "./Pages/HomeStoreApp";
 
 const router = createBrowserRouter([
   {
     path: "home",
-    element: <HomeStorePage/>,
+    element: <HomeStorePage />,
   },
   {
     path: "/apparel",
     element: <Apparel />,
   },
   {
-    path: "/jewelry",
-    element: <Jewelry/>,
+    path: "/jewelery",
+    element: <Jewelery />,
   },
-
-
- 
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);

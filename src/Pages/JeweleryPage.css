@@ -1,0 +1,16 @@
+.card-container-jewelery {
+  display: grid;
+  margin-top: 300px;
+  grid-template-columns: auto auto;
+  justify-content: space-evenly;
+  /* row-gap: 60px; */
+  padding: 10px;
+  background-color: rgb(238 240 242 / 80%);
+}
+
+.card-image-jewelery,
+.card-body-jewelery {
+  height: 200px;
+  width: 200px;
+  border-radius: 20px;
+}

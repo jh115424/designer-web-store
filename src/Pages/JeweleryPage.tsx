@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./HomeStore.css";
 import "./MensApparelPage.css";
-// import "./JewelryPage.css";
-import { useEffect, useState } from "react";
+import "./JeweleryPage.css";
 
-
-export default function ApparelPage() {
+export default function JeweleryPage() {
   const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/category/men's clothing", {
+    fetch("https://fakestoreapi.com/products/category/jewelery", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -18,7 +17,6 @@ export default function ApparelPage() {
       .then((data) => setSearchResults(data))
       .catch((error) => console.error("Error:", error));
   }, []);
-
   return (
     <>
       <div className="topHome-Nav">
@@ -34,32 +32,26 @@ export default function ApparelPage() {
           </Link>
         </div>
       </div>
-
       <div>
-        <h1>Mens Apparel</h1>
+        <h1>Designer Jewelery</h1>
+        <Link to="/jewelery"></Link>
       </div>
-
-
-      <div className="card-container-mens">
-        
+      <div className="card-container-jewelery">
         {searchResults.map((category: any) => (
-          <div key={category.id} className="card-mens">
+          <div key={category.id} className="card-jewelery">
             <img
               src={category.image}
               className="card-image"
               alt={category.title}
             />
-            <div className="card-body-mens">
-              <h5 className="card-title-mens">{category.title}</h5>
-              <p className="card-text-mens">{category.price}</p>
-
-              {/* <p className="card-text-mens">{category.description}</p> */}
+            <div className="card-body-jewelery">
+              <h5 className="card-title-jewelery">{category.title}</h5>
+              <p className="card-text-jewelery">{category.price}</p>
+              {/* <p className="card-text-jewelery">{category.description}</p> */}
             </div>
           </div>
         ))}
       </div>
-
     </>
   );
 }
-

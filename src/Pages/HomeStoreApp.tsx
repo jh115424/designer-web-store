@@ -13,6 +13,7 @@ export default function HomeStoreApp() {
   const data_filter = data.filter(
     (filter: any) =>
       filter.category === "men's clothing" ||
+      filter.category === "jewelery" ||
       filter.category === "women's clothing"
   );
   useEffect(() => {
@@ -34,8 +35,8 @@ export default function HomeStoreApp() {
             <Link to="/apparel" className="btn btn-primary">
               Shop Men's
             </Link>
-            <Link to="/jewelry" className="btn btn-primary">
-              Shop Jewelry
+            <Link to="/jewelery" className="btn btn-primary">
+              Shop Jewelery
             </Link>
           </div>
         </div>
@@ -72,7 +73,7 @@ export default function HomeStoreApp() {
             <div className="card-body">
               <h5 className="card-title">{product.title}</h5>
               <p className="card-text">{product.price}</p>
-              <p className="card-text">{product.description}</p>
+              {/* <p className="card-text">{product.description}</p> */}
             </div>
           </div>
         ))}
